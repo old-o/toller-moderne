@@ -1,0 +1,105 @@
+% Schriftgröße und Dokumenttyp
+\documentclass[12pt,twoside]{report}
+
+% Use Times font for more portable PDf output
+\usepackage{times}
+
+% Deutsch und Latin1 benutzen
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{t1enc}
+\fontencoding{T1}
+
+% Fußnotenstil ohne Einrückung
+\usepackage[bottom,marginal]{footmisc}
+
+% Überschriftenstil klein
+\usepackage[tiny]{titlesec}
+
+% Seitenzahlen und Kapitelname im Seitenkopf
+%\pagestyle{myheadings}
+
+% Blocksatz erleichtern
+\sloppy
+
+% Seitenmaße
+\setlength{\topmargin}{0cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{1cm}
+\setlength{\textheight}{230mm}
+% \setlength{\oddsidemargin}{0mm}
+
+% Zählungstiefe
+\setcounter{secnumdepth}{4}
+
+% Zeilenabstand
+\renewcommand{\baselinestretch}{1.2}
+
+
+% Textmodi für Überschriften, Textkörper, usw.
+\newcommand{\DenseStyle}{\renewcommand{\baselinestretch}{1}\normalsize\small}
+\newcommand{\TextStyle}{\renewcommand{\baselinestretch}{1.2}\small\normalsize}
+\newcommand{\BibStyle}{\DenseStyle}
+\newcommand{\FootnoteStyle}{\renewcommand{\baselinestretch}{1}\normalsize\footnotesize}
+
+% Hervorhebungen und Zitate
+\newcommand{\Strong}[1]{\textbf{#1}}
+\newcommand{\Emph}[1]{\emph{#1}}
+\newcommand{\Cite}[1]{``#1''}
+\newcommand{\EmphCite}[1]{\emph{``#1''}}
+\newcommand{\Quote}[1]{`#1'}
+\newcommand{\EmphQuote}[1]{\emph{`#1'}}
+\newcommand{\DramName}[1]{\textsc{#1}}
+\newcommand{\DramHint}[1]{\textit{#1}}
+\newcommand{\Title}[1]{\EmphQuote{#1}}
+
+% Abkürzungen
+\newcommand{\Abr}[1]{#1.}
+\newcommand{\Nth}[1]{#1.}
+\newcommand{\AbrPair}[2]{#1.\,#2.}
+\newcommand{\AbrCont}[2]{#1.~#2}
+\newcommand{\Page}[1]{\AbrCont{S}{#1}}
+
+% Hilfsbefehle für Kopfzeile und Inhaltsverzeichnis
+\newcommand{\Header}[1]{\markright{\centerline{\textup{#1}}}}
+%\newcommand{\Header}[1]{\markright{\rightline{\footnotesize{\textup{{#1}}}}\ }}
+\newcommand{\BibHeader}{\Header{\bibname}}
+\newcommand{\ChapterHeader}[1]{\Header{\chaptername\ \thechapter. #1}}
+\newcommand{\TocEntry}[1]{\addcontentsline{toc}{chapter}{#1}}
+\newcommand{\BibTocEntry}{\TocEntry{Literaturverzeichnis}}
+
+% Nummerierte Kapitel
+\newcommand{\HeadingOne}[2]{\chapter{#1}\ChapterHeader{#2}}
+\newcommand{\HeadingTwo}[1]{\section{#1}}
+\newcommand{\HeadingThree}[1]{\subsection{#1}}
+\newcommand{\HeadingFour}[1]{\subsubsection{#1}}
+
+% Sonstige Kapitel
+\newcommand{\ExtraStuff}[2]{\chapter*{#1} #2}
+\newcommand{\HeadlineOne}[2]{\chapter*{#1}\TocEntry{#1}\Header{#2}}
+\newcommand{\HeadlineTwo}[1]{\section*{#1}}
+\newcommand{\HeadlineThree}[1]{\subsection*{#1}}
+\newcommand{\HeadlineFour}[1]{\subsubsection*{#1}}
+
+
+% Zitatblöcke
+\newenvironment{BlockQuote}{\DenseStyle\begin{quote}}{\end{quote}\TextStyle}
+
+% Literaturverzeichnis
+\newenvironment{BibList}[1]{\BibTocEntry\BibHeader\BibStyle\begin{thebibliography}{#1}}
+  {\end{thebibliography}\TextStyle}
+
+% Literaturverweise
+\newcommand{\BibRef}[2]{\cite{#1}, \Page{#2}}
+\newcommand{\SourceRef}[2]{\nolinebreak(#1/#2)}
+\newcommand{\LongSourceRef}[2]{GW #1, \Page{#2}}
+
+% Fußnoten
+\newcommand{\Footnote}[1]{\footnote{\FootnoteStyle#1}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "MAIN"
+%%% End: 
+
+
