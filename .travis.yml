@@ -4,8 +4,8 @@ before_install:
 
 script:
 - mkdir target
-- export TEXINPUTS="/src/main/tex//:"
-- pdflatex -output-directory target /src/main/tex/MAIN.tex
+- export TEXINPUTS="$TRAVIS_BUILD_DIR/src/main/tex//:"
+- pdflatex -output-directory target src/main/tex/MAIN.tex
 
 #after_success: ".travis/artifact-upload.sh"
 #
