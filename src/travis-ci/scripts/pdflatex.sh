@@ -1,7 +1,7 @@
 #! /bin/bash
 
 src="src/main/tex"
-export TEXINPUTS="$TRAVIS_BUILD_DIR/${src}//:"
+export TEXINPUTS="$(pwd)/${src}//:"
 
 for d in $(ls "${src}"); do
     mkdir -p "target/${d}"

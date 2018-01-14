@@ -2,9 +2,9 @@ before_install:
 - sudo apt-get update 
 - sudo apt-get install texlive texlive-latex-extra texlive-lang-german
 
-script: ".travis/pdflatex.sh"
+script: "src/travis-ci/scripts/pdflatex.sh"
 
-#after_success: ".travis/artifact-upload.sh"
+#after_success: "src/travis-ci/scripts/artifact-upload.sh"
 #
 #env:
 #  global:
