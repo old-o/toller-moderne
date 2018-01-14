@@ -2,10 +2,7 @@ before_install:
 - sudo apt-get update 
 - sudo apt-get install texlive texlive-latex-extra texlive-lang-german
 
-script:
-- mkdir target
-- export TEXINPUTS="$TRAVIS_BUILD_DIR/src/main/tex//:"
-- pdflatex -output-directory target src/main/tex/MAIN.tex
+script: ".travis/pdflatex.sh"
 
 #after_success: ".travis/artifact-upload.sh"
 #
