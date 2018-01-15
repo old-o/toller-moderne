@@ -6,7 +6,10 @@ Lehramt an Gymnasien und Gesamtschulen
 image:https://travis-ci.org/odoepner/toller-moderne.svg?branch=master["Build Status",
 link="https://travis-ci.org/odoepner/toller-moderne"]
 
+Coming soon: 
 https://bintray.com/artifact/download/odoepner/generic/toller-moderne.pdf[Download latest build]
+
+https://odoepner.files.wordpress.com/2016/11/reflexionen-der-moderne.pdf[Original version from 2001]
 
 == About
 
